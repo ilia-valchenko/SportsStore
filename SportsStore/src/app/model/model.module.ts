@@ -4,11 +4,17 @@ import { StaticDataSource } from "./static.datasource";
 import { Cart } from "./cart.model";
 import { OrderRepository } from "./order.repository";
 import { Order } from "./order.model";
+import { HttpModule } from "@angular/http";
+import { RestDataSource } from "./rest.datasource";
 
 @NgModule({
+    imports: [HttpModule],
     providers: [
         ProductRepository,
-        StaticDataSource,
+        {
+            provide: StaticDataSource,
+            useClass: RestDataSource
+        },
         Cart,
         Order,
         OrderRepository

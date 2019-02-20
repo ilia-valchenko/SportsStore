@@ -16,7 +16,9 @@ export class CheckoutComponent {
     constructor(
         public repository: OrderRepository,
         public order: Order
-    ) {}
+    ) {
+        console.log(order);
+    }
 
     public submitOrder(form: NgForm) {
         this.submitted = true;
