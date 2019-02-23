@@ -35,4 +35,14 @@ export class ProductRepository {
             this.dataSource.updateProduct(product);
         }
     }
+
+    public deleteProduct(id: number): void {
+        this.dataSource.deleteProduct(id)
+            .subscribe(deletedProduct => {
+                this.products.splice(
+                    this.products.findIndex(p => p.id === deletedProduct.id),
+                    1
+                );
+            })
+    }
 }

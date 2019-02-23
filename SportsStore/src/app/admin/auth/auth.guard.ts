@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
-import { AuthService } from '../model/auth.service';
+import { AuthService } from '../../model/auth.service';
 
 @Injectable()
 export class AuthGuard {
@@ -17,6 +17,6 @@ export class AuthGuard {
                 return false;
             }
 
-            return false;
+            return true;
         }
 }
